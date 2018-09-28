@@ -1,21 +1,25 @@
 # document_classification
 
+## 定义
+
 这里的document_classification指的是长文本，一个文本由好几个句子组成。
 
 典型的数据集包括yelp2013,2014，imdb
 
 主要方法为嵌入attention信息，包括local，user、product、 cognition等
 
-### 最初：没有使用attention，提出了层次化针对document-level
+## 发展脉络
+
+#### 最初：没有使用attention，提出了层次化针对document-level
 1、duyu tang   Document modeling with gated recurrent neural network for sentiment classification.
 
-### 加入local attention信息
+#### 加入local attention信息
 2、Zichao Yang,  Hierarchical  attention  networks  for  document  classification.
 
-### 加入cognition信息
+#### 加入cognition信息
 3、yunfei long  A Cognition Based Attention Model for Sentiment Analysis
 
-### 加入user、product信息，沿着这个信息由多篇文章发表，duyu tang是第一个
+#### 加入user、product信息，沿着这个信息由多篇文章发表，duyu tang是第一个
 4、duyu tang    learning semantic  representations  of  users  and  products  for document level sentiment classification 
 
 5、Neural sentiment classification with user and product attention
@@ -39,7 +43,7 @@ du和dp加权相加得到最后的d
 
 这里是考虑冷启动情况，公式很复杂，我也不理解
 
-### 结果比较acc
+## 结果比较acc
 Model  | imdb | yelp2013 | yelp2014 | yelp2015
 ------------- | ------------- | ------------- | ------------- | -------------
  1  | 0.453   | 0.651 | 0.671  | 0.676 
@@ -52,3 +56,7 @@ Model  | imdb | yelp2013 | yelp2014 | yelp2015
  8  | 0.539 | 0.662 | 0.676 | / 
  9  | 0.542 |0.657 | /  | /
 
+## 我的一些想法
+关于user、product分别attention得到表示du、dp之后，可以使用一个gate进行选择，类似于8中最后要分别给一个权重，这里的权重通过gate获得，类似的gate想法参考Gated Neural Networks for Targeted Sentiment Analysis这篇文章。
+
+试验有做，但是效果并不是很好，但我觉得这个想法应该不错吧。
