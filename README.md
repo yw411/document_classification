@@ -43,6 +43,9 @@ du和dp加权相加得到最后的d
 
 这里是考虑冷启动情况，公式很复杂，我也不理解
 
+10、Cascading Multiway Attentions for Document-level Sentiment Classification
+和7有些像，分布使用user、product、user和product进行得到3种向量，是直接进行拼接的，而不是像7那样进行了选择。
+
 #### 加入词典信息
 
 10、A Lexicon-Based Supervised Attention Model for Neural Sentiment Analysis
